@@ -25,7 +25,9 @@ const CryptoCard = ({ coin }) => {
             <div className="border-b-2 border-text-primary/50"></div>
             <div className="flex justify-between items-center mt-4">
                 <span>
-                    <p className="text-text-inverse">Price: ${coin.price}</p>
+                    <p className="text-text-inverse">
+                        Price: ${coin.current_price}
+                    </p>
                     <p
                         className={`${
                             coin.price_change_percentage_24h >= 0
