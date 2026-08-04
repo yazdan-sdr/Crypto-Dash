@@ -1,9 +1,22 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./global.css";
 import App from "./App";
+import Header from "../components/shared/header";
+import Footer from "../components/shared/footer/page";
+import About from "./pages/about";
 createRoot(document.getElementById("root")).render(
     <StrictMode>
-        <App />
+        <BrowserRouter>
+            <Header />
+            <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="/about" element={<About />} />
+                {/* <Route path="/coin/:id" element={<CoinDetailsPage />} /> */}
+            </Routes>
+            <Footer />
+        </BrowserRouter>
+        ,
     </StrictMode>,
 );

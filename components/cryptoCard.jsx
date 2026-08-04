@@ -1,20 +1,49 @@
-const CryptoCard = () => {
+import { Link } from "react-router-dom";
+import { MoveUpRight } from "lucide-react";
+const CryptoCard = ({ coin }) => {
     return (
-        <div className="m-4 flex flex-col border-2 w-auto p-4 max-w-xs h-auto">
-            <div className="flex justify-between gap-2 border-b-2 mb-2 pb-2">
-                <span>LOGO</span>
-                <h4>name</h4>
-                <p>FN</p>
-                <span>go</span>
-            </div>
-
-            <div className="flex justify-between items-center">
+        <div className="m-4 flex flex-col border-2 border-text-primary/50 bg-secondary/10 rounded-2xl w-auto p-4 h-auto">
+            <div className="flex justify-between gap-2 mb-2 pb-2 max-w-sm items-center">
                 <span>
-                    <p>price</p>
-                    <p>percent</p>
-                    <p>capital</p>
+                    <img
+                        src={coin.image}
+                        alt={coin.name}
+                        width={48}
+                        className="rounded-full"
+                    />
                 </span>
-                <span>GRAPH</span>
+                <h4 className="text-text-inverse font-bold">{coin.symbol}</h4>
+                <p className="text-text-primary bg-neutral-300 h-fit p-1 text-xs rounded-md">
+                    {coin.name}
+                </p>
+                <span className="">
+                    <Link>
+                        <MoveUpRight className="text-text-secondary cursor-pointer p-2 w-10 h-10 hover:w-11 hover:h-11 bg-background/20 hover:bg-background/30 rounded-full" />
+                    </Link>
+                </span>
+            </div>
+            <div className="border-b-2 border-text-primary/50"></div>
+            <div className="flex justify-between items-center mt-4">
+                <span>
+                    <p className="text-text-inverse">Price: ${coin.price}</p>
+                    <p
+                        className={`${
+                            coin.price_change_percentage_24h >= 0
+                                ? "text-percent-up"
+                                : "text-percent-down"
+                        }`}>
+                        {coin.price_change_percentage_24h} %
+                    </p>
+                    <p className="text-text-inverse">
+                        Market Cap: {coin.market_cap}
+                    </p>
+                </span>
+                <span
+                    className={`${
+                        coin.price_change_percentage_24h >= 0
+                            ? "bg-percent-up"
+                            : "bg-percent-down"
+                    } p-2 rounded-lg w-10 h-10`}></span>
             </div>
         </div>
     );
