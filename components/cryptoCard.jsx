@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { MoveUpRight } from "lucide-react";
 const CryptoCard = ({ coin }) => {
     return (
-        <div className="m-4 flex flex-col border-2 border-text-primary/50 bg-secondary/10 rounded-2xl w-auto p-4 h-auto">
+        <div className="m-4 flex flex-col border-2 border-text-primary/50 bg-white/6 rounded-2xl w-auto p-4 h-auto">
             <div className="flex justify-between gap-2 mb-2 pb-2 max-w-sm items-center">
                 <span>
                     <img
