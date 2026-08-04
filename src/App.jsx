@@ -1,5 +1,6 @@
 import CryptoCard from "../components/cryptoCard";
 import { useState, useEffect } from "react";
+import Hero from "../components/shared/hero";
 const API_URL =
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=20&order=market_cap_desc&page=1&sparkline=false";
 // curl --request GET \
@@ -43,6 +44,7 @@ const App = () => {
     }, []);
     return (
         <div>
+            <Hero />
             {loading && <p>Loading...</p>}
             {loading && <p>Error</p>}
             {!loading && !error && (
