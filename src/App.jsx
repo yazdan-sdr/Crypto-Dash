@@ -45,15 +45,17 @@ const App = () => {
     return (
         <div>
             <Hero />
-            {loading && <p>Loading...</p>}
-            {loading && <p>Error</p>}
-            {!loading && !error && (
-                <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5">
-                    {coins.map((coin) => (
-                        <CryptoCard coin={coin} key={coin.id} />
-                    ))}
-                </main>
-            )}
+            <div className="px-4">
+                {loading && <p>Loading...</p>}
+                {loading && <p>Error</p>}
+                {!loading && !error && (
+                    <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5">
+                        {coins.map((coin) => (
+                            <CryptoCard coin={coin} key={coin.id} />
+                        ))}
+                    </main>
+                )}
+            </div>
         </div>
     );
 };

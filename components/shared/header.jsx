@@ -27,9 +27,11 @@ const Header = () => {
                         type="button"
                         className="
                         font-heading
-                        text-xs cursor-pointer bg-secondary
+                        transition-colors
+                        duration-200
+                        text-xs cursor-pointer bg-secondary/60
                         px-2 py-1 rounded-md
-                        hover:bg-secondary/70 md:text-sm
+                        hover:bg-secondary md:text-sm
                         "
                         to="/">
                         HOME
@@ -38,9 +40,11 @@ const Header = () => {
                         type="button"
                         className="
                         font-heading
-                        text-xs cursor-pointer bg-secondary
+                        transition-colors
+                        duration-200
+                        text-xs cursor-pointer bg-secondary/60
                         px-2 py-1 rounded-md
-                        hover:bg-secondary/70 md:text-sm
+                        hover:bg-secondary md:text-sm
                         "
                         to="/about">
                         About
