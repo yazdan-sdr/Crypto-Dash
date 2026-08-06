@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./global.css";
 import App from "./App";
 import About from "./pages/aboutpage";
+import CoinDetails from "./pages/CoinDetailsPage";
 import Header from "../components/shared/header";
 import Footer from "../components/shared/footer/page";
 import BackgroundGlow from "../components/BackgroundGlow";
@@ -17,8 +18,8 @@ createRoot(document.getElementById("root")).render(
                     <Header />
                     <Routes>
                         <Route path="/" element={<App />} />
-                        <Route path="/about" element={<About />} />
-                        {/* <Route path="/coin/:id" element={<CoinDetailsPage />} /> */}
+                        <Route path="/About" element={<About />} />
+                        <Route path="/CoinDetails" element={<CoinDetails />} />
                     </Routes>
                     <Footer />
                 </div>

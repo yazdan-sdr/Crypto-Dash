@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { MoveUpRight } from "lucide-react";
 import SkeletonLoading from "./skeletonLoader";
 const CryptoCard = ({ coin, isLoading }) => {
-    console.log(isLoading);
     return (
         <>
             {isLoading ? (
@@ -19,14 +18,14 @@ const CryptoCard = ({ coin, isLoading }) => {
                             />
                         </span>
                         <h4 className="text-text-inverse font-bold">
-                            {coin.symbol}
+                            {coin.symbol.toUpperCase()}
                         </h4>
                         <p className="text-text-primary bg-neutral-300 h-fit p-1 text-xs rounded-md">
                             {coin.name}
                         </p>
                         <span className="">
-                            <Link>
-                                <MoveUpRight className="text-text-secondary cursor-pointer p-2 w-10 h-10 hover:w-11 hover:h-11 bg-background/20 hover:bg-background/30 rounded-full" />
+                            <Link to={"/CoinDetails"}>
+                                <MoveUpRight className="text-text-secondary cursor-pointer p-2 w-10 h-10 bg-background/20 hover:bg-background/40 transition-colors delay-20 rounded-full" />
                             </Link>
                         </span>
                     </div>
@@ -45,7 +44,8 @@ const CryptoCard = ({ coin, isLoading }) => {
                                 {coin.price_change_percentage_24h} %
                             </p>
                             <p className="text-text-inverse">
-                                Market Cap: {coin.market_cap}
+                                Market Cap: $
+                                {coin.market_cap.toLocaleString("en-US")}
                             </p>
                         </span>
                         <span
