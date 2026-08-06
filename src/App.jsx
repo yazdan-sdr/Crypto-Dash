@@ -70,21 +70,21 @@ const App = () => {
                     <SortCoinsBy sortBy={sortBy} onSortChange={setSortby} />
                     <LimitSelector limit={limit} onLimitChange={setlimit} />
                 </div>
-                {loading && (
-                    <p className="text-text-inverse text-center text-5xl">
-                        Loading...
-                    </p>
-                )}
+                {loading && <p className="text-white text-4xl">LOADING</p>}
                 {error && (
                     <p className="text-text-inverse text-center text-5xl">
                         {error}
                     </p>
                 )}
-                {!loading && !error && (
+                {!error && (
                     <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5">
                         {filteredCoins.length > 0 ? (
                             filteredCoins.map((coin) => (
-                                <CryptoCard coin={coin} key={coin.id} />
+                                <CryptoCard
+                                    isLoading={loading}
+                                    coin={coin}
+                                    key={coin.id}
+                                />
                             ))
                         ) : (
                             <p>there is no match with {filter}</p>
