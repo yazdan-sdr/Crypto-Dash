@@ -10,8 +10,10 @@
 
 @theme {
     --color-primary: #808080;
-    --color-secondary: #511281;
-    --color-dark: #11011e;
+    --color-secondary: #61892f;
+    --color-search: #7bb32d;
+    --color-border: #324d0e;
+    --color-dark: #222629;
     --color-background: #ffffff;
 
     --color-text-primary: #2b2b2b;

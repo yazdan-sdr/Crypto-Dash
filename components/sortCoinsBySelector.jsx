@@ -7,7 +7,7 @@ const SortCoinsBy = ({ sortBy, onSortChange }) => {
                 Sort By:
             </label>
             <select
-                className="bg-text-inverse/15 h-10 text-text-inverse rounded-md mx-2 p-1 text-sm w-full"
+                className="bg-text-inverse/15 focus:outline-2 outline-secondary h-10 text-text-inverse rounded-md mx-2 p-1 text-sm w-full"
                 value={sortBy}
                 id="limit"
                 onChange={(e) => onSortChange(e.target.value)}>

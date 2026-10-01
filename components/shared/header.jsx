@@ -6,7 +6,7 @@ const Header = () => {
             <div
                 className="
                             flex text-white justify-between
-                            items-center pb-6 pt-4 px-4 border-b border-primary/50
+                            items-center pb-6 pt-4 px-4 border-b-2 border-border
                             md:px-20 lg:px-30">
                 <Link to="/">
                     <div className="text-white flex gap-2 justify-center items-center">
@@ -29,9 +29,11 @@ const Header = () => {
                         font-heading
                         transition-colors
                         duration-200
-                        text-xs cursor-pointer bg-secondary/60
+                        text-xs cursor-pointer
+                        bg-search/90
                         px-2 py-1 rounded-md
                         hover:bg-secondary md:text-sm
+                        text-text-primary
                         "
                         to="/">
                         HOME
@@ -42,9 +44,11 @@ const Header = () => {
                         font-heading
                         transition-colors
                         duration-200
-                        text-xs cursor-pointer bg-secondary/60
+                        text-xs cursor-pointer
+                        bg-search/90
                         px-2 py-1 rounded-md
                         hover:bg-secondary md:text-sm
+                        text-text-primary
                         "
                         to="/about">
                         About

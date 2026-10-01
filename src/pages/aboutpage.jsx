@@ -1,7 +1,7 @@
 const About = () => {
     return (
         <div className="p-4 pt-10 flex items-center justify-center">
-            <div className="max-w-lg bg-secondary/10 border-2 border-text-primary/50 rounded-2xl p-4">
+            <div className="max-w-lg border-2 border-border rounded-2xl p-4">
                 <h2 className="text-text-inverse text-2xl mb-3 font-bold font-heading md:text-3xl">
                     About Crypto Dash
                 </h2>

@@ -7,13 +7,10 @@ import About from "./pages/aboutpage";
 import CoinDetails from "./pages/CoinDetailsPage";
 import Header from "../components/shared/header";
 import Footer from "../components/shared/footer/page";
-import BackgroundGlow from "../components/BackgroundGlow";
 createRoot(document.getElementById("root")).render(
     <StrictMode>
         <BrowserRouter>
             <div className="relative min-h-screen overflow-hidden">
-                <BackgroundGlow />
-
                 <div className="relative z-10">
                     <Header />
                     <Routes>

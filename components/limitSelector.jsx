@@ -5,7 +5,7 @@ const LimitSelector = ({ limit, onLimitChange }) => {
                 Show:
             </label>
             <select
-                className="bg-text-inverse/15 h-10 text-text-inverse rounded-md mx-2 p-1 text-sm w-full"
+                className="bg-text-inverse/15 focus:outline-2 outline-secondary h-10 text-text-inverse rounded-md mx-2 p-1 text-sm w-full"
                 value={limit}
                 id="limit"
                 onChange={(e) => onLimitChange(Number(e.target.value))}>

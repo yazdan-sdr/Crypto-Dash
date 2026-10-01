@@ -4,6 +4,7 @@ import Hero from "../components/shared/hero";
 import LimitSelector from "../components/limitSelector";
 import FilterInput from "../components/filterInput";
 import SortCoinsBy from "../components/sortCoinsBySelector";
+import SkeletonLoading from "../components/skeletonLoader";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const App = () => {
@@ -70,13 +71,19 @@ const App = () => {
                     <SortCoinsBy sortBy={sortBy} onSortChange={setSortby} />
                     <LimitSelector limit={limit} onLimitChange={setlimit} />
                 </div>
-                {loading && <p className="text-white text-4xl">LOADING</p>}
+                {loading && (
+                    <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5">
+                        {Array.from({ length: limit }).map((_, i) => (
+                            <SkeletonLoading key={i} index={i} />
+                        ))}
+                    </main>
+                )}
                 {error && (
                     <p className="text-text-inverse text-center text-5xl">
                         {error}
                     </p>
                 )}
-                {!error && (
+                {!error && !loading && (
                     <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5">
                         {filteredCoins.length > 0 ? (
                             filteredCoins.map((coin) => (
@@ -87,7 +94,10 @@ const App = () => {
                                 />
                             ))
                         ) : (
-                            <p>there is no match with {filter}</p>
+                            <p className="text-text-muted mt-10 w-screen text-center text-xl md:text-3xl">
+                                There is no match with{" "}
+                                <span className="text-search">"{filter}"</span>
+                            </p>
                         )}
                     </main>
                 )}

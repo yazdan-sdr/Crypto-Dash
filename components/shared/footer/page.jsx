@@ -6,17 +6,16 @@ const footer = () => {
     return (
         <footer
             className="
-            border-t
-            border-primary/20
-                bg-secondary/10
-                mt-50
-                flex
-                flex-col
-                items-center
-                justify-center">
+            border-t-2
+            border-border
+            mt-50
+            flex
+            flex-col
+            items-center
+            justify-center">
             <div className="flex flex-col items-center justify-between gap-2 mt-10">
                 <div className="flex items-center justify-center">
-                    <h2 className="text-2xl text-text-inverse font-bold md:text-4xl font-heading">
+                    <h2 className="text-2xl text-secondary font-bold md:text-4xl font-heading">
                         GET IN TOUCH
                     </h2>
                 </div>
@@ -37,7 +36,7 @@ const footer = () => {
                     {"\u00a9"}
                     {thisYear}.{"\u00a0"}
                     Developed by{" "}
-                    <span className="font-bold text-[#3b1956]">
+                    <span className="font-bold text-secondary">
                         YAZDAN SADRI.
                     </span>
                 </p>
